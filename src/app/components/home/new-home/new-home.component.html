@@ -1,0 +1,174 @@
+<div class="main">
+  <app-one-section [ngClass]="{
+    'zIndexDialog': (isVisibleFilter)
+  }"></app-one-section>
+
+
+  <!-- ***************************** hackathon ********************************** -->
+          <!-- <ng-container *ngIf="isDesktop"> 
+            <div class="container">
+                <div class="column">
+                    <swiper-container
+                    [slidesPerView]="4"
+                    [spaceBetween]="20"
+                    [loop]="false"
+                    [allowTouchMove]="true"
+                    [navigation]="true"
+                    [pagination]="{ clickable: true }">
+                        <swiper-slide  *ngFor="let item of homeService.hackathons; let i = index"> 
+
+                            <app-hackathon-card class="card" [cardItem]="item" *ngIf="item.visibility != 'BAN'"></app-hackathon-card>
+                          
+                        </swiper-slide>
+                    </swiper-container>
+                </div>
+            </div>
+          </ng-container>
+  
+          <ng-container *ngIf="isMobile">
+            <div class="column">
+              <swiper-container
+                [slidesPerView]="1"
+                [loop]="false"
+                [allowTouchMove]="true"
+                [navigation]="true"
+              >
+                  <swiper-slide  *ngFor="let item of homeService.hackathons; let i = index"> 
+
+                      <app-hackathon-card class="card" [cardItem]="item" *ngIf="item.visibility != 'BAN'"></app-hackathon-card>
+              
+                  </swiper-slide>
+              </swiper-container>
+          </div>
+          </ng-container>   -->
+  <!-- ***************************** close hackathon ********************************** -->
+  
+  <!-- *****************************  project ********************************** -->
+          <!-- <ng-container *ngIf="isDesktop"> 
+            <div class="container">
+                <div class="column">
+                    <swiper-container
+                    [slidesPerView]="4"
+                    [spaceBetween]="20"
+                    [loop]="false"
+                    [allowTouchMove]="true"
+                    [navigation]="true"
+                    [pagination]="{ clickable: true }">
+                        <swiper-slide  *ngFor="let item of homeService.projects; let i = index">
+
+                          <app-project class="card" [cardItem]="item" *ngIf="item.visibility != 'BAN'"></app-project>
+               
+                        </swiper-slide>
+                    </swiper-container>
+                </div>
+            </div>
+          </ng-container> 
+          <ng-container *ngIf="isMobile">
+            <div class="column">
+              <swiper-container
+                [slidesPerView]="1"
+                [loop]="false"
+                [allowTouchMove]="true"
+                [navigation]="true"
+              >
+              <swiper-slide  *ngFor="let item of homeService.projects; let i = index">
+
+                  <app-project class="card" [cardItem]="item" *ngIf="item.visibility != 'BAN'"></app-project>
+              
+              </swiper-slide>
+              </swiper-container>
+          </div>
+          </ng-container>   -->
+  <!-- ***************************** close project ********************************** -->
+  
+  
+  <!-- ***************************** vacancy ********************************** -->
+  
+          <ng-container *ngIf="isDesktop"> 
+            <div class="container">
+
+              <div class="first-block">
+                    <div class="column">
+                        <swiper-container
+                        [slidesPerView]="4"
+                        [spaceBetween]="20"
+                        [loop]="false"
+                        [allowTouchMove]="true"
+                        [navigation]="true"
+                        [pagination]="{ clickable: true }">
+                            <swiper-slide  *ngFor="let item of vacancyList; let i = index"> 
+                                    <lib-vacancy class="card"  [cardItem]="item" *ngIf="item.visibility != 'BAN'"></lib-vacancy>                
+                            </swiper-slide>        
+                        </swiper-container>
+                    </div>
+
+                    <div class="column bottom">
+                      <swiper-container
+                      [slidesPerView]="4"
+                      [spaceBetween]="20"
+                      [loop]="false"
+                      [allowTouchMove]="true"
+                      [navigation]="true"
+                      [pagination]="{ clickable: true }">
+                          <swiper-slide  *ngFor="let item of resumeList; let i = index"> 
+                                  <lib-vacancy class="card"  [cardItem]="item" *ngIf="item.visibility != 'BAN'"></lib-vacancy>                
+                          </swiper-slide>
+                      </swiper-container>
+                  </div>
+            </div>
+
+    <div class="first-block">
+              <div class="column bottom">
+                <swiper-container
+                [slidesPerView]="4"
+                [spaceBetween]="20"
+                [loop]="false"
+                [allowTouchMove]="true"
+                [navigation]="true"
+                [pagination]="{ clickable: true }">
+                    <swiper-slide  *ngFor="let item of hackathonList; let i = index"> 
+                            <lib-vacancy class="card"  [cardItem]="item" *ngIf="item.visibility != 'BAN'"></lib-vacancy>                
+                    </swiper-slide>
+                </swiper-container>
+            </div>
+    </div>
+    
+    <div class="first-block">
+            <div class="column bottom">
+              <swiper-container
+              [slidesPerView]="4"
+              [spaceBetween]="20"
+              [loop]="false"
+              [allowTouchMove]="true"
+              [navigation]="true"
+              [pagination]="{ clickable: true }">
+                  <swiper-slide  *ngFor="let item of projectList; let i = index"> 
+                          <lib-vacancy class="card"  [cardItem]="item" *ngIf="item.visibility != 'BAN'"></lib-vacancy>                
+                  </swiper-slide>
+              </swiper-container>
+          </div>
+    </div>
+
+            </div>
+          </ng-container>
+  
+
+          <ng-container *ngIf="isMobile">
+              <div class="column">
+                <swiper-container
+                  [slidesPerView]="1"
+                  [loop]="false"
+                  [allowTouchMove]="true"
+                  [navigation]="true" >
+                    <swiper-slide  *ngFor="let item of vacancyList; let i = index"> 
+                            <lib-vacancy class="card"  [cardItem]="item" *ngIf="item.visibility != 'BAN'"></lib-vacancy>                     
+                    </swiper-slide>
+                </swiper-container>
+            </div>
+          </ng-container>   
+  
+   
+  <!-- ***************************** close vacancy ********************************** -->
+
+    </div>
+

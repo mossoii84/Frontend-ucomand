@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnDestroy, QueryList, ViewChildren } from '@angular/core';
-import { OneSectionComponent } from './sections/one-section/one-section.component';
+import { FirstSectionComponent } from './sections/first-section/first-section.component';
 import { ThirdSectionComponent } from './sections/third-section/third-section.component';
 import { FourthSectionComponent } from "./sections/fourth-section/fourth-section.component";
 import { FifthSectionComponent } from "./sections/fifth-section/fifth-section.component";
@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-public-lending',
   standalone: true,
-  imports: [OneSectionComponent, TwoSectionComponent, ThirdSectionComponent, 
+  imports: [FirstSectionComponent, TwoSectionComponent, ThirdSectionComponent, 
     FourthSectionComponent, FifthSectionComponent, SixthSectionComponent, CommonModule],
   templateUrl: './public-lending.component.html',
   styleUrl: './public-lending.component.css'

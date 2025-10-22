@@ -49,79 +49,96 @@ export class HomeService {
     return this.http.post(`${this.domain}/main/${type}/getAll?${queryParams}`, savedFilters);
   }
 
-  getVacancies() {
-    this.getCardData('vacancy').subscribe(data => {
-      if (data) {
-        const filteredData = data.filter((vacancy: any) => vacancy.visibility !== "BAN");
-        if (filteredData.length === 30) {
-          this.visibleNextPage = true;
-        } else {
-          this.visibleNextPage = false;
-        }
 
-        this.selectPage = this.selectPage + 1;
-        this.vacancies = [...this.vacancies, ...filteredData];
-      }
-      this.loading = false;
-    })
+  getVacancies(): Observable<any> {
+    return this.getCardData('vacancy');
+  }
+  getResumes(): Observable<any> {
+    return this.getCardData('resume');
+  }
+  getHackathons() : Observable<any> {
+    return this.getCardHackathons();
+  }
+  getProject() : Observable<any> {
+    return this.getCardProjects();
   }
 
-  getResumes() {
-    this.getCardData('resume').subscribe(data => {
-      if (data) {
-        const filteredData = data.filter((resume: any) => resume.visibility !== "BAN");
-        if (filteredData.length === 30) {
-          this.visibleNextPage = true;
-        } else {
-          this.visibleNextPage = false;
-        }
 
-        this.selectPage = this.selectPage + 1;
-        this.resumes = [...this.resumes, ...filteredData];
-      }
-      this.loading = false;
-    });
-  }
+
+
+  // getVacancies() {
+  //   this.getCardData('vacancy').subscribe(data => {
+  //     if (data) {
+  //       const filteredData = data.filter((vacancy: any) => vacancy.visibility !== "BAN");
+  //       if (filteredData.length === 30) {
+  //         this.visibleNextPage = true;
+  //       } else {
+  //         this.visibleNextPage = false;
+  //       }
+
+  //       this.selectPage = this.selectPage + 1;
+  //       this.vacancies = [...this.vacancies, ...filteredData];
+  //     }
+  //     this.loading = false;
+  //   })
+  // }
+
+  // getResumes() {
+  //   this.getCardData('resume').subscribe(data => {
+  //     if (data) {
+  //       const filteredData = data.filter((resume: any) => resume.visibility !== "BAN");
+  //       if (filteredData.length === 30) {
+  //         this.visibleNextPage = true;
+  //       } else {
+  //         this.visibleNextPage = false;
+  //       }
+
+  //       this.selectPage = this.selectPage + 1;
+  //       this.resumes = [...this.resumes, ...filteredData];
+  //     }
+  //     this.loading = false;
+  //   });
+  // }
 
   projects: any;
 
-  getProject() {
+  // getProject() {
 
-    this.getCardProjects().subscribe((data: any) => {
-      if (data) {
-        const filteredData = data.filter((project: any) => project.visibility !== "BAN");
-        if (filteredData.length === 30) {
-          this.visibleNextPage = true;
-        } else {
-          this.visibleNextPage = false;
-        }
+  //   this.getCardProjects().subscribe((data: any) => {
+  //     if (data) {
+  //       const filteredData = data.filter((project: any) => project.visibility !== "BAN");
+  //       if (filteredData.length === 30) {
+  //         this.visibleNextPage = true;
+  //       } else {
+  //         this.visibleNextPage = false;
+  //       }
 
-        this.selectPage = this.selectPage + 1;
-        this.projects = [...this.projects, ...filteredData];
-      }
-      this.loading = false;
-    });
-  }
+  //       this.selectPage = this.selectPage + 1;
+  //       this.projects = [...this.projects, ...filteredData];
+  //     }
+  //     this.loading = false;
+  //   });
+  // }
 
 
   hackathons: any = [];
 
-  gethackathons() {
-    this.getCardHackathons().subscribe((data: any) => {
-      if (data) {
-        // const filteredData = data.data.filter((project: any) => project.visibility !== "BAN");
-        if (data.length === 30) {
-          this.visibleNextPage = true;
-        } else {
-          this.visibleNextPage = false;
-        }
+  // gethackathons() {
+  //   this.getCardHackathons().subscribe((data: any) => {
+  //     if (data) {
+  //       // const filteredData = data.data.filter((project: any) => project.visibility !== "BAN");
+  //       if (data.length === 30) {
+  //         this.visibleNextPage = true;
+  //       } else {
+  //         this.visibleNextPage = false;
+  //       }
 
-        this.selectPage = this.selectPage + 1;
-        this.hackathons = [...this.hackathons, ...data];
-      }
-      this.loading = false;
-    });
-  }
+  //       this.selectPage = this.selectPage + 1;
+  //       this.hackathons = [...this.hackathons, ...data];
+  //     }
+  //     this.loading = false;
+  //   });
+  // }
 
 
   getCardProjects() {
@@ -253,7 +270,7 @@ export class HomeService {
       this.getProject();
     }
     if (type === 'hackathon') {
-      this.gethackathons();
+      this.getHackathons();
     }
   }
 

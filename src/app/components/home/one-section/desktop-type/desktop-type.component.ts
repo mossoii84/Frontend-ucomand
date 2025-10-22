@@ -6,11 +6,13 @@ import { SettingHeaderService } from '../../../setting-header.service';
 import { FormSettingService } from '../../../form/form-setting.service';
 import { Router } from '@angular/router';
 import { PopUpErrorCreateService } from '../../../pop-up-error-create/pop-up-error-create.service';
+import { FifthSectionComponent } from "../../../../pages/public-lending/sections/fifth-section/fifth-section.component";
+import { FirstSectionComponent } from "../../../../pages/public-lending/sections/first-section/first-section.component";
 
 @Component({
   selector: 'app-desktop-type',
   standalone: true,
-  imports: [BackgroundImgsComponent],
+  imports: [BackgroundImgsComponent, FirstSectionComponent],
   templateUrl: './desktop-type.component.html',
   styleUrl: './desktop-type.component.css'
 })

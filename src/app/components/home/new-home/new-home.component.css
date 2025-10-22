@@ -1,0 +1,128 @@
+.zIndexDialog{
+    z-index: 1 !important;
+}
+
+
+.app-card-vacancy-link, .app-card-resume-link{
+    text-decoration: none;
+}
+
+.search {
+    width: 100%;
+    height: 115px;
+    background: #b9aeff;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.search-container {
+    width: 65%;
+}
+
+.sticky-filter{
+    position: fixed;
+    padding-top: 5px;
+    top: 75px; 
+    width: 100%;
+    background: var(--background);
+    left: 0;
+    z-index: 1;
+}
+
+.messageError{
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 106%;
+    letter-spacing: 0.023em;
+    color: var(--font-color);
+}
+
+.nextPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nextPage a{
+    font-family: var(--font-Monts);
+    font-weight: 500;
+    font-size: 0.85rem;
+    line-height: 114%;
+    color: var(--font-color);
+}
+
+.nextPage a:hover{
+    color: #A6EB20;
+}
+
+
+
+
+@media (min-width: 768px) { 
+        .column {
+            display: flex;
+            width: 100vw;
+            justify-content: flex-end;
+            margin-left: 10%;
+        }
+        swiper-container {
+            width: 100%;
+            display: flex; 
+        }
+        swiper-slide {
+            margin: 0 15px;
+            max-width: 100%;
+        }
+
+        .card {
+            text-decoration: none;
+            width: 100%;
+            display: flex;
+            min-height: 100px;
+            height: auto;
+            box-sizing: border-box;
+            flex: 0 0 auto;         /* фиксируем ширину, чтобы не сжимались */
+            margin: 10px 0;
+        } 
+
+        .bottom {
+            margin-top: 70px;
+        }
+
+}
+
+  /* For mobile phones */
+  @media (max-width: 767px) {
+
+    .column {
+        width: 100%;
+        
+    }
+    swiper-container {
+        width: 100vw;
+    }
+    swiper-slide a {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .card {
+        text-decoration: none;
+        width: 90%;
+        display: flex;
+        box-sizing: border-box;
+    }
+
+    .app-card-vacancy-link {
+        width: 100%; 
+      }
+
+}
+
+
+  
+
+
